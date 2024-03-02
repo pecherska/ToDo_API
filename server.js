@@ -3,12 +3,12 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 dotenv.config();
-const { DB_HOST, PORT = 3000 } = process.env;
+const { DB_HOST } = process.env;
 mongoose.set("strictQuery", true);
 mongoose
   .connect(DB_HOST)
   .then(() => {
-    app.listen(PORT);
+    app.listen(3000);
     console.log("Database connection successful");
     console.log("Server is running. Use our API on port: 3000");
     console.log(DB_HOST);
