@@ -1,11 +1,12 @@
 import app from "./app.js";
 import * as dotenv from "dotenv";
-import { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 
 dotenv.config();
 const { DB_HOST } = process.env;
-Mongoose.set("strictQuery", true);
-Mongoose.connect(DB_HOST)
+mongoose.set("strictQuery", true);
+mongoose
+  .connect(DB_HOST)
   .then(() => {
     app.listen(3000);
     console.log("Database connection successful");
